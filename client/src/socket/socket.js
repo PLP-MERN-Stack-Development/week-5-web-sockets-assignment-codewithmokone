@@ -24,6 +24,8 @@ export const useSocket = () => {
 
   // Connect to socket server
   const connect = (username) => {
+    console.log(username);
+    
     socket.connect();
     if (username) {
       socket.emit('user_join', username);
@@ -37,6 +39,8 @@ export const useSocket = () => {
 
   // Send a message
   const sendMessage = (message) => {
+    console.log("Client message: ", message);
+    
     socket.emit('send_message', { message });
   };
 
